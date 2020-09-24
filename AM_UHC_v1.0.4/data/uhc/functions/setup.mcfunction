@@ -82,6 +82,7 @@ scoreboard objectives setdisplay sidebar uhc.lobby
 scoreboard objectives add uhc.timer dummy
 scoreboard objectives add uhc.interface
 scoreboard players set loadModules uhc.interface 1
+scoreboard players set solo uhc.lobby 0
 
 # Lobby
 setworldspawn 0 253 0
@@ -89,8 +90,7 @@ execute positioned 0 255 0 run fill ~-12 250 ~-12 ~11 253 ~11 barrier hollow
 execute positioned 0 255 0 run fill ~-11 253 ~-11 ~10 253 ~10 air
 tp @a[tag=!global.ignore.pos] 0 253 0
 time set noon
-schedule function uhc:particles 1t
-schedule function uhc:teams/team_selector 1t
+schedule function uhc:lobbytick 1t
 
 # World border
 worldborder center 0 0
