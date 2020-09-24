@@ -1,0 +1,17 @@
+{
+    "display": {
+        "title": "UHC Control v1.0.0",
+        "description": "§3This pack allows the configuration of a UHC. To set up the pack use §d/function uhc:setup§3 and use the book to configure the options. To safely uninstall the pack use §d/function uhc:uninstall§3. To stop a UHC mid-game use §d/function uhc:stop§3. Please note that the UHC cannot be resumed.",
+        "icon": {
+            "item": "minecraft:enchanted_golden_apple"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "global:armouredmonkey",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}
