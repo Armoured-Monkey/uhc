@@ -4,6 +4,7 @@
 gamerule randomTickSpeed 3
 gamerule doImmediateRespawn true 
 gamerule doDaylightCycle true
+gamerule fallDamage true
 
 # Set everyone in team 0 to spectator team
 team join uhc.11 @a[team=uhc.0]
@@ -16,7 +17,7 @@ gamemode survival @a[team=!uhc.11]
 
 scoreboard players set ticks uhc.timer 0
 clear @a[gamemode=!creative]
-kill @e[type=minecraft:item]
+kill @e[type=minecraft:item, tag=!global.ignore, tag=!global.ignore.kill]
 time set 0
 advancement revoke @a everything
 schedule clear uhc:lobbytick
@@ -36,6 +37,6 @@ execute if score start uhc.border matches 512 unless score solo uhc.lobby matche
 
 
 effect give @a minecraft:regeneration 5 100 true 
-title @a title {"text":"GO!","color":"#0FF992"}
-execute at @a run playsound minecraft:ui.toast.challenge_complete master @a ~ ~ ~ 
+title @a[tag=!global.ignore.gui] title {"text":"GO!","color":"#0FF992"}
+playsound minecraft:ui.toast.challenge_complete master @a ~ ~ ~
 function uhc:times
